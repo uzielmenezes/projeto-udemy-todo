@@ -16,6 +16,34 @@ class Todo {
 
         //insert to list
         list.appendChild(template);
+
+        // add event to tasks
+        this.addEvents();
+    }
+
+    removeTask(task) {
+        console.log('removeu');
+    }
+
+    finishTask(task) {
+        console.log('finalizou');
+    }
+
+    addEvents() {
+        let removeBtns = document.querySelectorAll('.fa-trash');
+        let removeBtn = removeBtns[removeBtns.length -1];
+        let doneBtns = document.querySelectorAll('.fa-check');
+        let doneBtn = doneBtns[doneBtns.length -1];
+
+        // add remove event
+        removeBtn.addEventListener('click', () => {
+            todo.removeTask(this);
+        })
+
+        // add event to finish task
+        doneBtn.addEventListener('click', () => {
+            todo.finishTask(this);
+        })
     }
 }
 
@@ -24,7 +52,7 @@ let todo = new Todo();
 // events
 let addBtn = document.querySelector('#add');
 
-addBtn.addEventListener('click', function(e) {
+addBtn.addEventListener('click', (e) => {
     e.preventDefault();
 
     let taskText = document.querySelector('#task');
