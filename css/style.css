@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #FFF;
+    font-family: Helvetica;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+    background-color: #2C2C2C;
+}
+
+h2 {
+    margin: 0 0 2.5rem;
+}
+
+/* to do container */
+
+#main-container {
+    background-color: #242424;
+    position: relative;
+    max-width: 50%;
+    margin: 5vh auto 0;
+    padding: 3rem;
+}
+
+/* add container */
+
+#add-container {
+    margin:0 0 2rem;
+    padding: 0 0 2rem;
+    border-bottom: .1rem solid #444;    
+}
+
+#add-container input, #add-container button {
+    padding: 1rem;
+    background-color: #393939;
+    border: none;
+    width: 80%;
+    display: inline-block;
+}
+
+#add-container button {
+    width: 18%;
+    cursor: pointer;
+    transition: .5s;
+}
+
+#add-container button i {
+    color: #FF7066;
+
+}
+
+#add-container button:hover {
+    background-color: #FF7066;
+}
+
+#add-container button:hover > i {
+    color: #242424; 
+}
+
+/* tasks container */
+
+.task {
+    margin: 0 0 1.5rem;
+    padding: 0 0 1.5rem;
+    border-bottom: .1rem solid #444;
+    position: relative;
+}
+
+.hide {
+    display: none;
+}
+
+.task:hover .fa-trash {
+    display: block;
+}
+
+.fa.fa-check {
+    border-radius: 50%;
+    border: .1rem solid #444;
+    margin: 0 1rem 0 0;
+    padding: .7rem;
+    cursor: pointer;
+}
+
+.fa.fa-check.done {
+    color: #0DD657;
+    border: .1rem solid #0DD657;
+}
+
+.fa.fa-check:hover,  .fa.fa-trash:hover {
+    color: #FF7066;
+    border-color: #FF7066;
+}
+
+.fa.fa-trash {
+    position: absolute;
+    right: 0;
+    top: 1rem;
+    cursor: pointer;
+    display: none;
+}
+
+#empty-tasks {
+    text-align: center;
+}
+
