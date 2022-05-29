@@ -1,6 +1,6 @@
 class Todo {
     constructor() {
-        this.totalTasks = document.querySelectorAll('.task').length;
+        this.totalTasks = document.querySelectorAll('.task').length;        
     }
 
     addTask(taskText) {
@@ -19,6 +19,8 @@ class Todo {
 
         // add event to tasks
         this.addEvents();
+
+        this.checkTasks('add');
     }
 
     removeTask(task) {
@@ -27,6 +29,8 @@ class Todo {
 
         // remove from list
         parentEl.remove()
+
+        this.checkTasks('remove');
     }
     
     finishTask(task) {
@@ -50,6 +54,26 @@ class Todo {
         doneBtn.addEventListener('click', function() {
             todo.finishTask(this);
         });
+    }
+
+    checkTasks(command) {
+        let msg = document.querySelector('#empty-tasks');
+
+        // add or remove tasks logic
+        if(command === 'add') {
+            this.totalTasks += 1;
+        } else if(command === 'remove') {
+            this.totalTasks -= 1;
+        }
+
+        // check for one or more tasks then removes class
+        if(this.totalTasks == 1) {
+            msg.classList.remove('hide');
+
+        } else {
+            msg.classList.add('hide');
+        }
+
     }
 }
 
