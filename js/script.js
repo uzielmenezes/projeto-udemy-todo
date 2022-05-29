@@ -22,28 +22,34 @@ class Todo {
     }
 
     removeTask(task) {
-        console.log('removeu');
-    }
+        // find parent element
+        let parentEl = task.parentElement;
 
+        // remove from list
+        parentEl.remove()
+    }
+    
     finishTask(task) {
-        console.log('finalizou');
+
+        // add done's class
+        task.classList.add('done');
     }
 
     addEvents() {
         let removeBtns = document.querySelectorAll('.fa-trash');
-        let removeBtn = removeBtns[removeBtns.length -1];
+        let removeBtn = removeBtns[removeBtns.length - 1];
         let doneBtns = document.querySelectorAll('.fa-check');
-        let doneBtn = doneBtns[doneBtns.length -1];
+        let doneBtn = doneBtns[doneBtns.length - 1];
 
         // add remove event
-        removeBtn.addEventListener('click', () => {
+        removeBtn.addEventListener('click', function() {
             todo.removeTask(this);
-        })
+        });
 
         // add event to finish task
-        doneBtn.addEventListener('click', () => {
+        doneBtn.addEventListener('click', function() {
             todo.finishTask(this);
-        })
+        });
     }
 }
 
@@ -63,4 +69,4 @@ addBtn.addEventListener('click', (e) => {
 
     // clear text field
     taskText.value = '';
-})
+});
